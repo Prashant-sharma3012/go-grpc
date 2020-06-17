@@ -1,0 +1,19 @@
+syntax = "proto3";
+package call;
+
+option go_package = "../call";
+
+message Request {
+  string Incoming = 1;
+}
+
+message Response {
+  string Outgoing = 1;
+}
+
+service CallingService{
+  rpc Talk(Request) returns (Response);
+  rpc Hello(Request) returns (Response);
+  rpc Bye(Request) returns (Response);
+}
+
